@@ -1,12 +1,12 @@
 Summary:	A tool for determining compilation options
 Name:		pkg-config
-Version:	0.27.1
+Version:	0.28
 Release:	1
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
 Source0:	http://pkgconfig.freedesktop.org/releases/%{name}-%{version}.tar.gz
-# Source0-md5:	5392b4e3372879c5bf856173b418d6a2
+# Source0-md5:	aa3c86e67551adc3ac865160e34a2a0d
 URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	autoconf
 BuildRequires:	automake

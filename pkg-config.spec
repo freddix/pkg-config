@@ -1,7 +1,9 @@
+%bcond_with	bootstrap
+
 Summary:	A tool for determining compilation options
 Name:		pkg-config
 Version:	0.28
-Release:	1
+Release:	2
 Epoch:		1
 License:	GPL
 Group:		Development/Tools
@@ -10,7 +12,7 @@ Source0:	http://pkgconfig.freedesktop.org/releases/%{name}-%{version}.tar.gz
 URL:		http://pkgconfig.freedesktop.org/wiki/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	glib-devel
+%{!?with_bootstrap:BuildRequires:	glib-devel}
 BuildRequires:	libtool
 BuildRequires:	popt-devel
 Provides:	pkg-config(pkg-config) = %{version}
@@ -34,7 +36,8 @@ option and ouputs the necessary compiler and linker flags.
 %{__autoheader}
 %{__autoconf}
 %configure \
-	--with-installed-popt
+	--with-installed-popt	\
+	--with%{!?with_bootstrap:out}-internal-glib
 %{__make}
 
 %install
